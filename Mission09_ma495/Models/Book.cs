@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
-// If you have enabled NRTs for your project, then un-comment the following line:
-// #nullable disable
 
 namespace Mission09_ma495.Models
 {
-    public partial class Book
+    public partial class Book //the information about the books that is in the database
     {
         [Key]
         [Required]

@@ -28,7 +28,7 @@ namespace Mission09_ma495.Controllers
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = repo.Books.Count(), //calculate how many pages are needed based on the number of books
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }

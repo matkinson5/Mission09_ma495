@@ -31,7 +31,7 @@ namespace Mission09_ma495.Infrastructure
         public PageInfo PageBooklist { get; set; }
         public string PageAction { get; set; }
 
-        public bool PageClassesEnabled { get; set; } = false;
+        public bool PageClassesEnabled { get; set; } = false; //te following variables make it possible to change the appearance of the different page tabs
         public string PageClass { get; set; }
 
         public string PageClassNormal { get; set; }
@@ -39,7 +39,7 @@ namespace Mission09_ma495.Infrastructure
         public string PageClassSelected { get; set; }
     
 
-        public override void Process (TagHelperContext thc, TagHelperOutput tho)
+        public override void Process (TagHelperContext thc, TagHelperOutput tho) //dynamically creates tags based on the number o fitems
         {
             IUrlHelper uh = uhf.GetUrlHelper(vc);
             TagBuilder final = new TagBuilder("div");
