@@ -37,7 +37,8 @@ namespace Mission09_ma495.Infrastructure
         public string PageClassNormal { get; set; }
 
         public string PageClassSelected { get; set; }
-    
+        
+      
 
         public override void Process (TagHelperContext thc, TagHelperOutput tho) //dynamically creates tags based on the number o fitems
         {
