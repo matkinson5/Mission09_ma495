@@ -4,31 +4,13 @@
 
 @model BooksViewModel
 
-<h1>Bookstore Project</h1>
+<h1>See a title that intrigues you?</h1>
+<h5> Click on it for more info</h5>
+<br />
 
 @foreach (Book b in Model.Books)
 {
-<div class="card card-outline-primary m-1 p-1"> <!--show the different books and the information available-->
-    <div class="bg-faded p-1">
-        <h4>
-            @b.Title
-            <span class="badge bg-secondary" style="float:right">
-                <small>@b.Price.ToString("c")</small>
-            </span>
-        </h4>
-    </div>
-    <div class="card-text p-1">
-        <ul>
-            <li>Author: @b.Author</li>
-            <li>Publisher: @b.Publisher</li>
-            <li>ISBN: @b.Isbn</li>
-            <li>Classification: @b.Classification</li>
-            <li>Category: @b.Category</li>
-            <li>PageCount: @b.PageCount</li>
-            <li>Price: @b.Price</li>
-        </ul>
-    </div>
-</div>
+    <partial name="BookSummary" model="b" />
 
 }
 

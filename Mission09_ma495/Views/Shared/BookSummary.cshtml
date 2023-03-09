@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Book
+
+<button class="accordion"> <!--Makes a header of sorts with the book title and price-->
+    <div class="bg-faded p-1">
+        <h4>
+            @Model.Title
+            <span class="badge bg-info" style="float:right">
+                
+                <small>Price:@Model.Price.ToString("c")</small>
+            </span>
+        </h4>
+    </div>
+</button>
+
+<div class="panel"> <!--Dropdown with further information-->
+    <ul>
+        <li>Author: @Model.Author</li>
+        <li>Publisher: @Model.Publisher</li>
+        <li>ISBN: @Model.Isbn</li>
+        <li>Classification: @Model.Classification</li>
+        <li>Category: @Model.Category</li>
+        <li>PageCount: @Model.PageCount</li>
+        <li>Price: @Model.Price</li>
+     </ul>
+    <form method="post" asp-page="/Purchase">
+        <input type="hidden" asp-for="@Model.BookId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-lg">BUY</button>
+        </span>
+
+    </form>
+    <br />
+</div>
+
+
+
+
